@@ -6,16 +6,16 @@ const purchaseHistoryView = (purchaseList) => {
     purchaseList = Array.isArray(purchaseList) ? purchaseList : [];
     purchaseList.forEach((item) => {
         const payAmount = item.pay_amount;
-        const payCurrency = item.pay_currency;
-        const priceText = Topupgame.numberToIntl(payAmount, payCurrency, xCountry);
-        const tile = Topupgame.safeImage(item.product_tile_image);
+        const payCurrency = item.pay_currency_code;
+        const priceText = Topupgame.numberToIntl(payAmount, payCurrency, "ID");
+        const tileImage = Topupgame.safeImage(item.product_tile_image);
         purchaseView = `
             ${purchaseView}
             <div class="purchase-status block block-rounded" data-order-id="${item.order_id}" style="cursor: pointer;">
                 <div class="block-content p-0">
                     <div class="d-flex flex-column">
                         <div class="d-flex align-items-center p-3 p-lg-4">
-                            <img class="img-sq img-round-pop flex-shrink-0 me-3 me-lg-4" src="${tile}">
+                            <img class="img-sq img-round-pop flex-shrink-0 me-3 me-lg-4" src="${tileImage}">
                             <div class="flex-grow-1 d-flex flex-column">
                                 <span class="fw-semibold">${item.product_title}</span>
                                 <span class="fs-sm">${item.denomination_name}</span>
