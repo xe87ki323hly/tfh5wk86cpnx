@@ -39,16 +39,15 @@ const purchaseHistoryView = (purchaseList) => {
 
 class frontendPurchaseRecents {
     static async init() {
-        const countryCode = $('meta[name="x-country-code"]').attr("content");
         $(document)
             .on("click", ".container-action", function () {
                 const orderId = $(this).data("order-id");
-                const statusLink = `${location.origin}/${countryCode}/purchase/order-status/${orderId}`;
+                const statusLink = Topupgame.urlIntl(`/purchase/order-status/${orderId}`);
                 location.href = statusLink;
             })
             .on("click", ".purchase-status", function () {
                 const orderId = $(this).data("order-id");
-                const statusLink = `${location.origin}/${countryCode}/purchase/order-status/${orderId}`;
+                const statusLink = Topupgame.urlIntl(`/purchase/order-status/${orderId}`);
                 location.href = statusLink;
             });
 

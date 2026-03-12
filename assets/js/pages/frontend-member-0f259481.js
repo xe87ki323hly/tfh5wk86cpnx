@@ -112,11 +112,10 @@ const getPurchaseList = (page = 1) => {
 class frontendMember {
     static init() {
         const countryCode = $("meta[name='x-country-code']").attr("content") || "US";
-        const countryId = String(countryCode).toLowerCase();
         $(document)
             .on("click", ".purchase-status", function () {
                 const orderId = $(this).data("order-id");
-                const statusLink = `${location.origin}/${countryId}/purchase/order-status/${orderId}`;
+                const statusLink = Topupgame.urlIntl(`/purchase/order-status/${orderId}`);
                 location.href = statusLink;
             })
             .on("click", ".prev-page", function () {
