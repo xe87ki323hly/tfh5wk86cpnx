@@ -1,5 +1,5 @@
 /*!
- * topupgame - v1.0.0
+ * topupgame - v2.0.0
  * @author Khanif Ikhsanudin - https://khanif.dev
  * Copyright (c) 2026
  */
